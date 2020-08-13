@@ -3,117 +3,35 @@
     <head>
         <title>Rock, Paper, Scissors</title>
         <meta charset="UTF-8"/>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
+        <h1>Rock, Paper, Scissors!</h1>
+        <div id='scoreboard'>
+            <div id="player-score" class="score">
+                <h2>You</h2>
+                <h3 class="draw">0</h3>
+            </div>
+            <div id="computer-score" class="score">
+                <h2>Computer</h2>
+                <h3 class="draw">0</h3>
+            </div>
+        </div>
+        <div id="game-display">
+            <div id="player-display"></div>
+            <div id="computer-display"></div>
+        </div>
+        <div id="images">
+            <img id="player-pic" class="image" src="Images/rock.png" alt="rock">
+            <img id="computer-pic" class="image" src="Images/rock.png" alt="rock">
+        </div>
+        <div id='buttons'>
+            <button id='rock' type="button">Rock!</button>
+            <button id='paper' type="button">Paper!</button>
+            <button id='scissors' type="button">Scissors!</button>
+        </div>
+        <button id="play-btn">Play!</button>
         <script>
-            function computerPlay(){
-                let choice = Math.random() * 3;
-                if(choice < 1) {
-                    return 'rock';
-                } else if (choice < 2) {
-                    return 'paper';
-                } else {
-                    return 'scissors';
-                }
-            }
-
-            function playRound(playerSelection, computerSelection) {
-                if(playerSelection == 'rock') {
-                    return playerChoosesRock(computerSelection);
-                } else if (playerSelection == 'paper'){
-                    return playerChoosesPaper(computerSelection);
-                } else if (playerSelection == 'scissors') {
-                    return playerChoosesScissors(computerSelection);
-                } else {
-                    return "Invalid input";
-                }
-            }
-
-            function playerChoosesRock(computerSelection) {
-                switch(computerSelection){
-                    case 'paper':
-                        return 'lose';
-                        break;
-                    case 'scissors':
-                        return 'win';
-                        break;
-                    default:
-                        return "draw";
-                        break;
-                }
-            }
-
-            function playerChoosesPaper(computerSelection) {
-                switch(computerSelection){
-                    case 'rock':
-                        return 'win';
-                        break;
-                    case 'scissors':
-                        return 'lose';
-                        break;
-                    default:
-                        return "draw";
-                        break;
-                }
-            }
-
-            function playerChoosesScissors(computerSelection) {
-                switch(computerSelection){
-                    case 'rock':
-                        return 'lose';
-                        break;
-                    case 'paper':
-                        return 'win';
-                        break;
-                    default:
-                        return "draw";
-                        break;
-                }
-            }
-        
-            function game(){
-                let playerScore = 0;
-                let computerScore = 0;
-                
-                for(i = 0; i < 5; i++) {
-                    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
-                    computerSelection = computerPlay();
-
-                    console.log(`Player picked: ${playerSelection}`);
-                    console.log(`Computer picked: ${computerSelection}`);
-                    result = playRound(playerSelection, computerSelection);
-                    if(result == 'win') {
-                        console.log("Player wins!");
-                        playerScore++;
-
-                        console.log(`Player Score: ${playerScore}`);
-                        console.log(`Computer Score: ${computerScore}
-                        `);
-                    } else if (result == 'lose'){
-                        console.log("Computer wins!");
-                        computerScore++;
-
-                        console.log(`Player Score: ${playerScore}`);
-                        console.log(`Computer Score: ${computerScore}
-                        `);
-                    } else if (result == 'draw') {
-                        console.log("It's a draw!\n");
-                    } else {
-                        console.log("Invalid Input");
-                        i--;
-                    }
-                }
-
-                if(playerScore > computerScore) {
-                    alert('You Win!');
-                } else if (computerScore > playerScore) {
-                    alert('You Lose!');
-                } else {
-                    alert("It's a Draw!");
-                }
-            }
-
-            game();
         </script>
     </body>
 </html>
