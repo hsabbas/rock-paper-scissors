@@ -32,8 +32,8 @@ h3 {
 }
 
 .draw {
-    color: white;
-    text-shadow: 0 0 1px white;
+    color: #bbbbff;
+    text-shadow: 0 0 1px #bbbbff;
 }
 
 .winner{
@@ -53,7 +53,9 @@ h3 {
 }
 
 .image {
-    margin: 0 30px;
+    margin: 0 40px;
+    width: 235px;
+    height: 235px;
 }
 
 #computer-pic {
@@ -61,7 +63,6 @@ h3 {
 }
 
 #buttons{
-    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
@@ -82,5 +83,15 @@ button:hover {
 }
 
 #play-btn {
-    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+}
+
+div {
+    visibility: hidden;
+}
+
+#results-display{
+    margin-top: 10px;
 }

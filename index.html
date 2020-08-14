@@ -8,30 +8,26 @@
     <body>
         <h1>Rock, Paper, Scissors!</h1>
         <div id='scoreboard'>
-            <div id="player-score" class="score">
+            <div class="score">
                 <h2>You</h2>
-                <h3 class="draw">0</h3>
+                <h3 id="player-score" class="draw">0</h3>
             </div>
-            <div id="computer-score" class="score">
+            <div class="score">
                 <h2>Computer</h2>
-                <h3 class="draw">0</h3>
+                <h3 id="computer-score" class="draw">0</h3>
             </div>
-        </div>
-        <div id="game-display">
-            <div id="player-display"></div>
-            <div id="computer-display"></div>
         </div>
         <div id="images">
             <img id="player-pic" class="image" src="Images/rock.png" alt="rock">
             <img id="computer-pic" class="image" src="Images/rock.png" alt="rock">
         </div>
+        <h1 id="results-display">Click Play to Begin</h1>
         <div id='buttons'>
             <button id='rock' type="button">Rock!</button>
             <button id='paper' type="button">Paper!</button>
             <button id='scissors' type="button">Scissors!</button>
         </div>
         <button id="play-btn">Play!</button>
-        <script>
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
