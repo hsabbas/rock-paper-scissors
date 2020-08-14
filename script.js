@@ -5,8 +5,14 @@ function startGame() {
     })
     document.getElementById("results-display").style.visibility = "hidden";
 
-    document.getElementById("player-score").innerHTML = 0;
-    document.getElementById("computer-score").innerHTML = 0;
+    let playerScore = document.getElementById("player-score");
+    let computerScore = document.getElementById("computer-score");
+
+    playerScore.innerHTML = 0;
+    computerScore.innerHTML = 0;
+
+    playerScore.className = "draw";
+    computerScore.className = "draw";
 }
 
 function startRound(playerSelection) {
